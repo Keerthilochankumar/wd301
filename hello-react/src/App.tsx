@@ -1,4 +1,14 @@
+import React from 'react';
 import TaskCard from "./TaskCard";
+
+interface Task {
+  title: string;
+  completed: boolean;
+  dueDate: string;
+  completedAtDate?: string;
+  assigneeName: string;
+}
+
 function App() {
   return (
     <main>
@@ -18,8 +28,6 @@ function App() {
             </div>
           </div>
 
-
-
           <div className='w-[90%] h-fit flex flex-col border-4 rounded-2xl border-blue-500 items-center gap-6'>
             <div className='w-full flex justify-center mt-6'>
               <h1 className='font-bold text-3xl'>Done</h1>
@@ -34,4 +42,5 @@ function App() {
     </main>
   );
 }
+
 export default App;
