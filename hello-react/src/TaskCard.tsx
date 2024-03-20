@@ -5,7 +5,7 @@ const TaskCard = (props) => {
     let competed=props.completed;
     let DE;
     if (competed) {
-        DE = "completed on: " + props.completedAtDate;
+        DE = "Completed on: " + props.completedAtDate;
     }
     else {
         DE = "DUE on: " + Date;
@@ -19,7 +19,7 @@ const TaskCard = (props) => {
                 <p>{DE}</p>
             </div>
             <div className="assignee">
-                <h4>Assignee:{Assignee}</h4>
+                <h4>Assignee: {Assignee}</h4>
             </div>
         </div>
   
