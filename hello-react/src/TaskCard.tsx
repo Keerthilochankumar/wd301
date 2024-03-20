@@ -8,7 +8,7 @@ const TaskCard = (props) => {
         DE = "completed on: " + props.completedAtDate;
     }
     else {
-        DE = "due date: " + Date;
+        DE = "DUE on: " + Date;
     }
     return (
         <div className="w-[35vw] h-fit border-2 border-gray-900 px-5 py-5 rounded-lg">
@@ -19,7 +19,7 @@ const TaskCard = (props) => {
                 <p>{DE}</p>
             </div>
             <div className="assignee">
-                <h4>Assignee name:{Assignee}</h4>
+                <h4>Assignee:{Assignee}</h4>
             </div>
         </div>
   
