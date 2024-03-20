@@ -1,28 +1,56 @@
 const TaskCard = (props) => {
-    let Date = props.dueDate;
-    const Assignee = props.assigneeName;
-    let title = props.title;
-    let competed=props.completed;
-    let DE;
-    if (competed) {
-        DE = "Completed on: " + props.completedAtDate;
+    const { title, dueDate, assigneeName, completedAtDate } = props;
+    if (title && dueDate && assigneeName && completedAtDate) {
+        return (
+            <div className="w-[35vw] h-fit border-2 border-gray-900 px-5 py-5 rounded-lg">
+                <div>
+                    <h4 className="text-xl font-serif font-bold text-red-500">{title}</h4>
+                </div>
+                <div className="">
+                    <p>Assignee: {assigneeName}</p>
+                    <p>Completed on: {completedAtDate}</p>
+                </div>
+            </div>
+        );
+    } else if (title && dueDate && assigneeName) {
+        return (
+            <div className="w-[35vw] h-fit border-2 border-gray-900 px-5 py-5 rounded-lg">
+                <div>
+                    <h4 className="text-xl font-serif font-bold text-red-500">{title}</h4>
+                </div>
+                <div className="">
+                    <p>Assignee: {assigneeName}</p>
+                    <p>Due on: {dueDate}</p>
+                </div>
+            </div>
+        );
+    } else if (assigneeName) {
+        return (
+            <div className="w-[35vw] h-fit border-2 border-gray-900 px-5 py-5 rounded-lg">
+                <div>
+                    <h4 className="text-xl font-serif font-bold text-red-500">{assigneeName}</h4>
+                </div>
+            </div>
+        );
+    } else if (dueDate) {
+        return (
+            <div className="w-[35vw] h-fit border-2 border-gray-900 px-5 py-5 rounded-lg">
+                <div className="">
+                    <p>Due on: {dueDate}</p>
+                </div>
+            </div>
+        );
+    } else if (completedAtDate) {
+        return (
+            <div className="w-[35vw] h-fit border-2 border-gray-900 px-5 py-5 rounded-lg">
+                <div className="">
+                    <p>Completed on: {completedAtDate}</p>
+                </div>
+            </div>
+        );
+    } else {
+        return null;
     }
-    else {
-        DE = "DUE on: " + Date;
-    }
-    return (
-        <div className="w-[35vw] h-fit border-2 border-gray-900 px-5 py-5 rounded-lg">
-            <div>
-                <h4 className="text-xl font-serif font-bold text-red-500">{title}</h4>
-            </div>
-            <div className="">
-                <p>{DE}</p>
-            </div>
-            <div className="assignee">
-                <h4>Assignee: {Assignee}</h4>
-            </div>
-        </div>
-  
-      )
-  }
-  export default TaskCard;
+}
+
+export default TaskCard;
